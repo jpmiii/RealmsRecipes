@@ -27,13 +27,13 @@ public class RealmsRecipes extends JavaPlugin {
 			if ((result = recipe.getResult()) == null)
 				continue;
 			// remove diamond chestplate
-			if (result.getTypeId() == 311)
+			if (result.getType() == Material.DIAMOND_CHESTPLATE)
 				recipes.remove();
 			// remove diamond helmet
-			if (result.getTypeId() == 310)
+			if (result.getType() == Material.DIAMOND_HELMET)
 				recipes.remove();
 			// remove diamond leggings
-			if (result.getTypeId() == 312)
+			if (result.getType() == Material.DIAMOND_LEGGINGS)
 				recipes.remove();
 		}
 
