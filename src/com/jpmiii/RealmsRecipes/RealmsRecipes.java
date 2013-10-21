@@ -57,7 +57,7 @@ public class RealmsRecipes extends JavaPlugin {
 
 		ShapedRecipe recipe3 = new ShapedRecipe(new ItemStack(
 				Material.DIAMOND_LEGGINGS, 1));
-		recipe3.shape("A A", "A A", "ABA");
+		recipe3.shape("ABA", "A A", "A A");
 		recipe3.setIngredient('A', Material.DIAMOND);
 		recipe3.setIngredient('B', Material.DIAMOND_BLOCK);
 		getServer().addRecipe(recipe3);
@@ -71,7 +71,7 @@ public class RealmsRecipes extends JavaPlugin {
 
 		ShapedRecipe recipe5 = new ShapedRecipe(new ItemStack(
 				Material.DIAMOND_HELMET, 1));
-		recipe5.shape("   ", "A A", "ABA");
+		recipe5.shape("ABA", "A A", "   ");
 		recipe5.setIngredient('A', Material.DIAMOND);
 		recipe5.setIngredient('B', Material.DIAMOND_BLOCK);
 
