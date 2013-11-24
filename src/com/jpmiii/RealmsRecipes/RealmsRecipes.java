@@ -106,23 +106,29 @@ public class RealmsRecipes extends JavaPlugin implements Listener {
 							&& is[8].equals(new ItemStack(Material.DIAMOND_BLOCK, 1))
 							&& is[9].equals(new ItemStack(Material.DIAMOND_BLOCK, 1))
 							)
-					{
-						ItemStack nit = new ItemStack(Material.DIAMOND_CHESTPLATE,	1);
+						{
+						if (is[5].hasItemMeta()) {
+							if (is[5].getItemMeta().getDisplayName().startsWith("Civrealms")) {
+								ItemStack nit = new ItemStack(
+										Material.DIAMOND_CHESTPLATE, 1);
 
-						ItemMeta im = nit.getItemMeta();
+								ItemMeta im = nit.getItemMeta();
 
-						im.setDisplayName("Civrealms Plate");
-						nit.setItemMeta(im);
+								im.setDisplayName("Civrealms Plate");
+								nit.setItemMeta(im);
 
-						nit.addEnchantment(
-								Enchantment.PROTECTION_ENVIRONMENTAL, 4);
-						//nit.addEnchantment(Enchantment.OXYGEN, 3);
-						//nit.addEnchantment(Enchantment.WATER_WORKER, 1);
+								nit.addEnchantment(
+										Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+								// nit.addEnchantment(Enchantment.OXYGEN, 3);
+								// nit.addEnchantment(Enchantment.WATER_WORKER,
+								// 1);
 
-						event.getInventory().clear();
-						CraftingInventory ci = (CraftingInventory) event
-								.getInventory();
-						ci.setResult(nit);
+								event.getInventory().clear();
+								CraftingInventory ci = (CraftingInventory) event
+										.getInventory();
+								ci.setResult(nit);
+							}
+						}
 					}
 					//
 					// pants recipe
@@ -137,46 +143,102 @@ public class RealmsRecipes extends JavaPlugin implements Listener {
 							&& is[9].equals(new ItemStack(Material.DIAMOND_BLOCK, 2))
 							)
 					{
-						ItemStack nit = new ItemStack(Material.DIAMOND_LEGGINGS,	1);
 
-						ItemMeta im = nit.getItemMeta();
+						if (is[5].hasItemMeta()) {
+							if (is[5].getItemMeta().getDisplayName()
+									.startsWith("Civrealms")) {
 
-						im.setDisplayName("Civrealms Pants");
-						nit.setItemMeta(im);
+								ItemStack nit = new ItemStack(
+										Material.DIAMOND_LEGGINGS, 1);
 
-						nit.addEnchantment(
-								Enchantment.PROTECTION_ENVIRONMENTAL, 4);
-						//nit.addEnchantment(Enchantment.OXYGEN, 3);
-						//nit.addEnchantment(Enchantment.WATER_WORKER, 1);
+								ItemMeta im = nit.getItemMeta();
 
-						event.getInventory().clear();
-						CraftingInventory ci = (CraftingInventory) event
-								.getInventory();
-						ci.setResult(nit);
+								im.setDisplayName("Civrealms Pants");
+								nit.setItemMeta(im);
+
+								nit.addEnchantment(
+										Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+								// nit.addEnchantment(Enchantment.OXYGEN, 3);
+								// nit.addEnchantment(Enchantment.WATER_WORKER,
+								// 1);
+
+								event.getInventory().clear();
+								CraftingInventory ci = (CraftingInventory) event
+										.getInventory();
+								ci.setResult(nit);
+							}
+						}
 					}
 					//
 					// boots recipe
 					//
-					if (       is[2].equals(new ItemStack(Material.RECORD_3, 1))
+					if (       is[2].equals(new ItemStack(Material.RECORD_7, 1))
 							&& is[3].equals(new ItemStack(Material.EMERALD_BLOCK, 16))
 							&& is[4].equals(new ItemStack(Material.DIAMOND_BLOCK, 2))
-							&& is[5].equals(new ItemStack(Material.RECORD_3, 1))
+							//&& is[5].equals(new ItemStack(Material.RECORD_3, 1))
 							&& is[6].equals(new ItemStack(Material.DIAMOND_BLOCK, 2))
 							&& is[7].equals(new ItemStack(Material.GOLDEN_APPLE, 16))
-							&& is[8].equals(new ItemStack(Material.RECORD_3, 1))
+							//&& is[8].equals(new ItemStack(Material.RECORD_3, 1))
 							&& is[9].equals(new ItemStack(Material.GOLDEN_APPLE, 16))
 							)
 					{
-						ItemStack nit = new ItemStack(Material.DIAMOND_BOOTS,	1);
+
+						if (is[2].hasItemMeta()) {
+							if (is[2].getItemMeta().getDisplayName()
+									.startsWith("Civrealms")) {
+
+								ItemStack nit = new ItemStack(
+										Material.DIAMOND_BOOTS, 1);
+
+								ItemMeta im = nit.getItemMeta();
+
+								im.setDisplayName("Civrealms Boots");
+								nit.setItemMeta(im);
+
+								nit.addEnchantment(
+										Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+								nit.addEnchantment(Enchantment.PROTECTION_FALL,
+										4);
+								// nit.addEnchantment(Enchantment.WATER_WORKER,
+								// 1);
+
+								event.getInventory().clear();
+								CraftingInventory ci = (CraftingInventory) event
+										.getInventory();
+								ci.setResult(nit);
+							}
+						}
+					}
+				}
+				//
+				// all records have a chest in slot 1
+				//
+				if (is[1].equals(new ItemStack(Material.CHEST, 1))){
+					
+					//
+					// disk for chestplate
+					//9 (maul disc) 1 Stack of iron, diamonds, emeralds,gold,coal blocks,
+					//redstone block, stack lapis block, quarts blocks 1 chest
+					//
+					if (       is[2].equals(new ItemStack(Material.IRON_INGOT, 64))
+							&& is[3].equals(new ItemStack(Material.GOLD_INGOT, 64))
+							&& is[4].equals(new ItemStack(Material.DIAMOND, 64))
+							&& is[5].equals(new ItemStack(Material.EMERALD, 64))
+							&& is[6].equals(new ItemStack(Material.COAL_BLOCK, 64))
+							&& is[7].equals(new ItemStack(Material.REDSTONE_BLOCK, 64))
+							&& is[8].equals(new ItemStack(Material.LAPIS_BLOCK, 64))
+							&& is[9].equals(new ItemStack(Material.QUARTZ_BLOCK, 64))
+							)
+					{
+						ItemStack nit = new ItemStack(Material.RECORD_6,	1);
 
 						ItemMeta im = nit.getItemMeta();
 
-						im.setDisplayName("Civrealms Boots");
+						im.setDisplayName("Civrealms 1");
 						nit.setItemMeta(im);
 
-						nit.addEnchantment(
-								Enchantment.PROTECTION_ENVIRONMENTAL, 4);
-						nit.addEnchantment(Enchantment.PROTECTION_FALL, 4);
+						//nit.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 4);
+						//nit.addEnchantment(Enchantment.PROTECTION_FALL, 4);
 						//nit.addEnchantment(Enchantment.WATER_WORKER, 1);
 
 						event.getInventory().clear();
@@ -184,8 +246,21 @@ public class RealmsRecipes extends JavaPlugin implements Listener {
 								.getInventory();
 						ci.setResult(nit);
 					}
+					
+					//1 (ward disc) - 128 cooked Chicken 128 cooked beef 
+					//128 cooked porkchop 128 cooked fish 1 chest
+					//2 (far disc) - 128 Potatoes 128 bread 128 carrots 128 melon blocks 1 chest
+					//3 (13 Disc)- 512 pumpkin pie 512 cookies 1 chest
+					//4 (mellohi disc) - created by combining 1 ward disc, 1 far disc and 1 13 disc.
+					//5 (blocks disc)- 576 Leather
+					//6 (stall disc) - 16x mob Eggs of the following hostile mobs Creeper, Skeletons ,Zombies, Zombie Pigmen, Spiders, enderman,cave spider, blaze 1 Chest
+					//7 (strad disc) - 32x mob eggs of the followign passive mobs Chicken, cow , pig, sheep , squid , horse, wolf, villagers 1 chest
+					//8 (disc number 11) - STall Disc + Strad Disc makes Disc Number 11
+
+					
 				}
 			}
+			
 		}
 
 		if (event.getInventory().getType() == InventoryType.ANVIL) {
